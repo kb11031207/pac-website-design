@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Warm Humanity Palette - Immigration PAC */
+:root {
+  --background: #f8f4ec; /* off-white cream */
+  --foreground: #3d3d3d; /* warm dark gray */
+  --card: #ffffff;
+  --card-foreground: #3d3d3d;
+  --popover: #ffffff;
+  --popover-foreground: #3d3d3d;
+  --primary: #788668; /* muted olive green */
+  --primary-foreground: #ffffff;
+  --secondary: #f2d497; /* warm beige */
+  --secondary-foreground: #3d3d3d;
+  --muted: #f2d497;
+  --muted-foreground: #5c5c5c;
+  --accent: #d9a87e; /* warm terracotta brown */
+  --accent-foreground: #ffffff;
+  --destructive: #c97b5a;
+  --destructive-foreground: #ffffff;
+  --border: #e5ded3;
+  --input: #e5ded3;
+  --ring: #788668;
+  --chart-1: #788668;
+  --chart-2: #a3c2b8;
+  --chart-3: #d9a87e;
+  --chart-4: #f2d497;
+  --chart-5: #c97b5a;
+  --radius: 0.75rem;
+  --sage: #a3c2b8; /* sage green */
+  --terracotta: #d9a87e;
+  --olive: #788668;
+  --beige: #f2d497;
+  --cream: #f8f4ec;
+}
+
+@theme inline {
+  --font-sans: "Libre Baskerville", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-display: "DM Sans", "Geist", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sage: var(--sage);
+  --color-terracotta: var(--terracotta);
+  --color-olive: var(--olive);
+  --color-beige: var(--beige);
+  --color-cream: var(--cream);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
