@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Award, Mic, Scale, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
+import { getAssetPath } from "@/lib/utils"
 
 const speakers = [
   {
@@ -102,7 +103,7 @@ export function Speaker() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2D497]/30">
                 <img
-                  src={speaker.image || "/placeholder.svg"}
+                  src={speaker.image ? (speaker.image.startsWith('http') ? speaker.image : getAssetPath(speaker.image)) : getAssetPath("/placeholder.svg")}
                   alt={speaker.name}
                   className="w-full h-full object-cover transition-opacity duration-300"
                 />

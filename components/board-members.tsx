@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { teamMembers } from "@/lib/team-members"
+import { getAssetPath } from "@/lib/utils"
 
 export function BoardMembers() {
   return (
@@ -19,7 +20,7 @@ export function BoardMembers() {
               <Card className="bg-white border-none shadow-lg overflow-hidden group hover:shadow-xl transition-all cursor-pointer h-full">
                 <div className="aspect-square overflow-hidden">
                   <img
-                    src={member.image || "/placeholder.svg"}
+                    src={member.image ? (member.image.startsWith('http') ? member.image : getAssetPath(member.image)) : getAssetPath("/placeholder.svg")}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />

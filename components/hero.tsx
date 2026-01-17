@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowDown } from "lucide-react"
+import { getAssetPath } from "@/lib/utils"
 
 export function Hero() {
   return (
@@ -8,7 +9,7 @@ export function Hero() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url('/diverse-hands-holding-together-unity-warmth-golden.jpg')`,
+          backgroundImage: `url('${getAssetPath('/diverse-hands-holding-together-unity-warmth-golden.jpg')}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

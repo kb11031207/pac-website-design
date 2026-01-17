@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, MapPin, GraduationCap, Calendar } from "lucide-react"
 import { getMemberBySlug, teamMembers } from "@/lib/team-members"
+import { getAssetPath } from "@/lib/utils"
 
 export async function generateStaticParams() {
   return teamMembers.map((member) => ({
@@ -44,7 +45,7 @@ export default async function TeamMemberPage({
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2D497]/30 shadow-lg">
                 <img
-                  src={member.image || "/placeholder.svg"}
+                  src={member.image ? (member.image.startsWith('http') ? member.image : getAssetPath(member.image)) : getAssetPath("/placeholder.svg")}
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />

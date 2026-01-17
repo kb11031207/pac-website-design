@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Clock } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { getAssetPath } from "@/lib/utils"
 
 export function EventDetails() {
   return (
@@ -53,7 +54,7 @@ export function EventDetails() {
 
           <div className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden">
             <img
-              src="/college-campus-building-warm-sunlight-community-ga.jpg"
+              src={getAssetPath("/college-campus-building-warm-sunlight-community-ga.jpg")}
               alt="Wannamaker building at Principia College"
               className="w-full h-full object-cover"
             />
