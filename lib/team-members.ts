@@ -80,7 +80,7 @@ export const teamMembers: TeamMember[] = [
     class: "Sophomore",
     majors: "Computer Science and Economics",
     hometown: "Cape Town, South Africa",
-    image: "https://prinweb.principia.edu/phone/new_faces_pictures/Andover_Extract_Files/86756220.jpg",
+    image: "https://github.com/chrisrama/pac-website-design/blob/main/public/Christian-headshot.jpg?raw=true",
     bio: "I am part of PAC because I help to share the message of values immigrants have created in order for people to understand better why immigration is a good thing.",
   },
   {
