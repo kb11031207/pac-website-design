@@ -162,13 +162,13 @@ export function Speaker() {
           </div>
 
           {/* Speaker content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-8 md:px-12">
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2D497]/30">
                 <img
                   src={speaker.image ? (speaker.image.startsWith('http') ? speaker.image : getAssetPath(speaker.image)) : getAssetPath("/placeholder.svg")}
                   alt={speaker.name}
-                  className="w-full h-full object-cover transition-opacity duration-300"
+                  className="w-full h-full object-cover object-top transition-opacity duration-300"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#788668] rounded-full flex items-center justify-center">
@@ -176,8 +176,8 @@ export function Speaker() {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-6 flex flex-col min-h-0">
+              <div className="flex flex-wrap gap-2 shrink-0">
                 {speaker.badges.map((badge, index) => (
                   <Badge key={index} className={`${badge.color} text-white hover:opacity-90`}>
                     <badge.icon className="w-3 h-3 mr-1" />
@@ -186,12 +186,12 @@ export function Speaker() {
                 ))}
               </div>
 
-              <h3 className="text-3xl md:text-4xl font-bold text-[#3D3D3D]">{speaker.name}</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-[#3D3D3D] shrink-0">{speaker.name}</h3>
 
-              <p className="text-xl text-[#788668] font-medium">{speaker.title}</p>
+              <p className="text-xl text-[#788668] font-medium shrink-0">{speaker.title}</p>
 
               {"sessionTime" in speaker && speaker.sessionTime && (
-                <div className="flex items-center gap-2 text-[#788668] font-medium">
+                <div className="flex items-center gap-2 text-[#788668] font-medium shrink-0">
                   <Clock className="w-5 h-5" />
                   <span>
                     {speaker.sessionTime}
@@ -200,34 +200,36 @@ export function Speaker() {
                 </div>
               )}
 
-              <p className="text-lg text-[#5C5C5C] leading-relaxed">{speaker.bio}</p>
+              <div className="min-h-0 overflow-y-auto pr-2 max-h-[380px] md:max-h-[420px]">
+                <p className="text-lg text-[#5C5C5C] leading-relaxed">{speaker.bio}</p>
 
-              <div className="pt-4 border-t border-[#E5DED3]">
-                <p className="text-[#5C5C5C] mb-4">Recognition & Achievements:</p>
-                <ul className="space-y-2">
-                  {speaker.achievements.map((achievement, index) => (
-                    <li key={index} className="flex items-center gap-2 text-[#3D3D3D]">
-                      <span
-                        className={`w-2 h-2 rounded-full ${
-                          index === 0 ? "bg-[#788668]" : index === 1 ? "bg-[#D9A87E]" : "bg-[#A3C2B8]"
-                        }`}
-                      />
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-                {"tedTalkUrl" in speaker && speaker.tedTalkUrl && (
-                  <a
-                    href={speaker.tedTalkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-lg bg-[#788668] text-white font-medium hover:bg-[#5f6d52] transition-colors"
-                  >
-                    <Mic className="w-4 h-4" />
-                    Watch TED Talk
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                )}
+                <div className="pt-4 mt-4 border-t border-[#E5DED3]">
+                  <p className="text-[#5C5C5C] mb-4">Recognition & Achievements:</p>
+                  <ul className="space-y-2">
+                    {speaker.achievements.map((achievement, index) => (
+                      <li key={index} className="flex items-center gap-2 text-[#3D3D3D]">
+                        <span
+                          className={`w-2 h-2 rounded-full shrink-0 ${
+                            index === 0 ? "bg-[#788668]" : index === 1 ? "bg-[#D9A87E]" : "bg-[#A3C2B8]"
+                          }`}
+                        />
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                  {"tedTalkUrl" in speaker && speaker.tedTalkUrl && (
+                    <a
+                      href={speaker.tedTalkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-lg bg-[#788668] text-white font-medium hover:bg-[#5f6d52] transition-colors"
+                    >
+                      <Mic className="w-4 h-4" />
+                      Watch TED Talk
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
