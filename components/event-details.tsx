@@ -17,7 +17,7 @@ export function EventDetails() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <Card className="bg-white border-none shadow-lg">
               <CardContent className="p-6 flex items-center gap-4">
@@ -56,37 +56,9 @@ export function EventDetails() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Schedule */}
-            <Card className="bg-white border-none shadow-lg">
-              <CardContent className="p-6">
-                <p className="text-sm text-[#788668] font-medium mb-4">Schedule</p>
-                <div className="space-y-3">
-                  {EVENT_SCHEDULE.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 py-2 border-b border-[#E5DED3] last:border-0"
-                    >
-                      <div className="font-medium text-[#3D3D3D]">{item.speaker}</div>
-                      <div className="flex items-center gap-2 text-[#5C5C5C] text-sm">
-                        <span>{item.day}</span>
-                        <span>·</span>
-                        <span>{item.time}</span>
-                        {item.role && (
-                          <>
-                            <span>·</span>
-                            <span className="text-[#788668] font-medium">{item.role}</span>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
-          <div className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden">
+          <div className="relative h-[400px] lg:min-h-[420px] rounded-3xl overflow-hidden">
             <img
               src={getAssetPath("/college-campus-building-warm-sunlight-community-ga.jpg")}
               alt="Wannamaker building at Principia College"
@@ -99,6 +71,30 @@ export function EventDetails() {
             </div>
           </div>
         </div>
+
+        {/* Schedule - full width below for better balance and readability */}
+        <Card className="mt-8 bg-white border-none shadow-lg">
+          <CardContent className="p-8">
+            <p className="text-lg font-semibold text-[#788668] mb-6">Schedule</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {EVENT_SCHEDULE.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-1 p-4 rounded-xl bg-[#F8F4EC]/50"
+                >
+                  <div className="font-semibold text-[#3D3D3D] text-base">{item.speaker}</div>
+                  <div className="text-[#5C5C5C] text-sm">
+                    {item.day}
+                  </div>
+                  <div className="text-[#788668] font-medium text-sm">
+                    {item.time}
+                    {item.role ? ` · ${item.role}` : ""}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )
