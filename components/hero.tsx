@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, ArrowRight } from "lucide-react"
 import { getAssetPath } from "@/lib/utils"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-end pt-20 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
@@ -14,47 +14,41 @@ export function Hero() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F4EC]/90 via-[#F8F4EC]/70 to-[#F8F4EC]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F8F4EC]/50 via-[#F8F4EC]/30 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-block mb-6 px-4 py-2 bg-[#F2D497]/60 rounded-full">
-          <span className="text-[#788668] font-medium text-sm md:text-base">
-            April 2-3, 2025 • Wannamaker, Principia College
-          </span>
-        </div>
+      {/* Hero Text Overlay (Right Side) */}
+      <div className="relative z-10 max-w-xl mx-auto lg:mx-0 lg:mr-12 xl:mr-20 px-4 sm:px-6 lg:px-8 text-center lg:text-right">
+        <p className="text-sm md:text-base text-[#788668] font-medium mb-4 tracking-wide">
+          America&apos;s Oldest Student-Led Conference • Est. 1939
+        </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#3D3D3D] mb-6 leading-tight text-balance">
           Journeys of Hope
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl text-[#788668] font-medium mb-8">Understanding Immigration</p>
-
-        <p className="text-lg md:text-xl text-[#5C5C5C] max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-          A Public Awareness Campaign dedicated to sharing immigrant stories, fostering understanding, and building
-          bridges within our community.
+        <p className="text-lg md:text-xl text-[#5C5C5C] mb-8 leading-relaxed text-pretty">
+          Five voices. Two days. One urgent question: What does it mean to search for home in America?
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <p className="text-[#788668] font-medium text-sm md:text-base mb-10">
+          April 2–3, 2025 Principia College • Free Admission
+        </p>
+
+        <div className="flex justify-center lg:justify-end">
           <Button
             asChild
             size="lg"
-            className="bg-[#788668] hover:bg-[#6a7659] text-white px-8 py-6 text-lg rounded-full"
+            className="bg-[#788668] hover:bg-[#6a7659] text-white px-8 py-6 text-lg rounded-full inline-flex items-center gap-2"
           >
-            <a href="#event">Learn More</a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="border-[#D9A87E] text-[#D9A87E] hover:bg-[#D9A87E] hover:text-white px-8 py-6 text-lg rounded-full bg-transparent"
-          >
-            <a href="#speaker">Meet Our Speakers</a>
+            <a href="/register">
+              Register Now <ArrowRight className="w-5 h-5" />
+            </a>
           </Button>
         </div>
 
-        <div className="mt-16 animate-bounce">
-          <ArrowDown className="w-8 h-8 text-[#788668] mx-auto" />
+        <div className="mt-16 animate-bounce flex justify-center lg:justify-end">
+          <ArrowDown className="w-8 h-8 text-[#788668]" />
         </div>
       </div>
     </section>
