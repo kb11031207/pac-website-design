@@ -29,8 +29,8 @@ const itemVariants = {
 }
 
 function getRoleLabel(speaker: (typeof speakers)[number], index: number): string {
-  if (speaker.sessionRole) return speaker.sessionRole
-  if (index === 0) return "Opening Speaker"
+  if (speaker.sessionRole === "Keynote Speaker") return "Keynote"
+  if (index === 0) return "Opening"
   return "Speaker"
 }
 
@@ -42,8 +42,8 @@ function SpeakerCard({
   index: number;
 }) {
   const roleLabel = getRoleLabel(speaker, index)
-  const isKeynote = roleLabel === "Keynote Speaker"
-  const isOpening = roleLabel === "Opening Speaker"
+  const isKeynote = roleLabel === "Keynote"
+  const isOpening = roleLabel === "Opening"
   const imageSrc = speaker.image.startsWith("http")
     ? speaker.image
     : getAssetPath(speaker.image)
@@ -62,26 +62,25 @@ function SpeakerCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-          {/* Role badge - top left */}
-          <div className="absolute top-5 left-5 flex items-center gap-2">
+          {/* Role badge - top left (max-width so it never overlaps time badge) */}
+          <div className="absolute top-5 left-5 right-5 flex justify-between items-start gap-3 pointer-events-none">
             <span
-              className={`text-xs font-semibold tracking-wide uppercase px-3 py-1.5 rounded-full backdrop-blur-sm ${
+              className={`shrink-0 text-xs font-semibold tracking-wide uppercase px-3 py-1.5 rounded-full backdrop-blur-sm max-w-[40%] truncate ${
                 isKeynote
                   ? "bg-[#D9A87E]/90 text-white"
                   : isOpening
                     ? "bg-[#788668]/90 text-white"
                     : "bg-white/20 text-white"
               }`}
+              title={roleLabel === "Keynote" ? "Keynote Speaker" : roleLabel === "Opening" ? "Opening Speaker" : roleLabel}
             >
               {roleLabel}
             </span>
-          </div>
 
-          {/* Time badge - top right */}
-          <div className="absolute top-5 right-5">
-            <span className="flex items-center gap-1.5 text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <Clock className="w-3 h-3" />
-              {speaker.sessionTime}
+            {/* Time badge - top right */}
+            <span className="flex items-center gap-1.5 text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full shrink-0 ml-auto">
+              <Clock className="w-3 h-3 flex-shrink-0" />
+              <span className="truncate">{speaker.sessionTime}</span>
             </span>
           </div>
         </div>
@@ -110,9 +109,6 @@ export function Speaker() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-medium tracking-wide uppercase text-[#788668] mb-3">
-            Conference Lineup
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-4 text-balance">
             Meet Our Speakers
           </h2>
