@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { Heart, Users, Globe, MessageCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const values = [
   {
@@ -31,11 +33,14 @@ export function Mission() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-6 text-balance">
             Journeys of Hope: Understanding Immigration
           </h2>
-          <p className="text-lg md:text-xl text-[#5C5C5C] leading-relaxed text-pretty">
+          <p className="text-lg md:text-xl text-[#5C5C5C] leading-relaxed text-pretty mb-8">
             Join America&apos;s oldest student-led conference. For over 75 years, Principia&apos;s Public Affairs
             Conference has convened leading voices on the most urgent issues of our time. This year, we examine
             immigration through the lens of humanity, hope, and the search for home.
           </p>
+          <Button asChild className="bg-[#788668] hover:bg-[#788668]/90 text-white px-8 py-3">
+            <Link href="/register">Register Now</Link>
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -1,4 +1,6 @@
+import Link from "next/link"
 import { Heart } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
@@ -7,9 +9,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Journeys of Hope</h3>
-            <p className="text-white/80 leading-relaxed">
+            <p className="text-white/80 leading-relaxed mb-4">
               Understanding Immigration through education, awareness, and dialogue.
             </p>
+            <Button asChild size="sm" className="bg-[#F2D497] text-[#3D3D3D] hover:bg-[#F2D497]/90">
+              <Link href="/register">Register Now</Link>
+            </Button>
           </div>
 
           <div>

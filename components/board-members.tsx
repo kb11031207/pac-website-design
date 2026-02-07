@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { teamMembers } from "@/lib/team-members"
 import { getAssetPath } from "@/lib/utils"
 
@@ -37,10 +38,13 @@ export function BoardMembers() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center space-y-4">
           <p className="text-[#5C5C5C] italic">
             Want to get involved? Reach out to learn more about joining our mission.
           </p>
+          <Button asChild variant="outline" className="border-[#788668] text-[#788668] hover:bg-[#788668] hover:text-white">
+            <Link href="/register">Register for the conference</Link>
+          </Button>
         </div>
       </div>
     </section>
