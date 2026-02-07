@@ -13,16 +13,16 @@ export function Hero() {
           alt="Diverse community coming together in unity"
           className="w-full h-full object-cover"
         />
-        {/* Gradient overlay: transparent on left for image, darkens toward right for text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3D3D3D]/30 via-[#3D3D3D]/50 to-[#3D3D3D]/85 md:from-[#3D3D3D]/10 md:via-[#3D3D3D]/40 md:to-[#3D3D3D]/90" />
+        {/* Gradient overlay: darkens on left for text, transparent toward right for image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3D3D3D]/85 via-[#3D3D3D]/50 to-[#3D3D3D]/30 md:from-[#3D3D3D]/90 md:via-[#3D3D3D]/40 md:to-[#3D3D3D]/10" />
         {/* Bottom gradient for smooth transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#F8F4EC] via-transparent to-transparent h-full" style={{ top: "80%" }} />
       </div>
 
       <div className="relative z-10 w-full pl-4 sm:pl-6 lg:pl-8 pr-4 md:pr-6 lg:pr-8">
-        <div className="flex items-center justify-end min-h-[calc(100vh-5rem)]">
-          {/* Text block pushed to the right */}
-          <div className="w-full max-w-xl md:max-w-2xl ml-0 md:ml-auto flex flex-col md:items-end md:text-right">
+        <div className="flex items-center justify-start min-h-[calc(100vh-5rem)]">
+          {/* Text block on the left */}
+          <div className="w-full max-w-xl md:max-w-2xl mr-0 md:mr-auto flex flex-col md:items-start md:text-left">
             {/* Eyebrow text */}
             <p className="text-[#F2D497] font-medium text-sm md:text-base tracking-wide uppercase mb-6">
               {"America's Oldest Student-Led Conference"} &bull; Est. 1939
