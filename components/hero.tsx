@@ -20,12 +20,9 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full pl-4 sm:pl-6 lg:pl-8 pr-4 md:pr-6 lg:pr-8">
-        <div className="flex items-center min-h-[calc(100vh-5rem)]">
-          {/* Spacer for left side (image shows through) */}
-          <div className="hidden md:block md:w-1/2" />
-
-          {/* Right side text overlay - at the edge */}
-          <div className="w-full md:w-1/2 md:pl-8 lg:pl-12 md:flex md:flex-col md:items-end md:text-right">
+        <div className="flex items-center justify-end min-h-[calc(100vh-5rem)]">
+          {/* Text block pushed to the right */}
+          <div className="w-full max-w-xl md:max-w-2xl ml-0 md:ml-auto flex flex-col md:items-end md:text-right">
             {/* Eyebrow text */}
             <p className="text-[#F2D497] font-medium text-sm md:text-base tracking-wide uppercase mb-6">
               {"America's Oldest Student-Led Conference"} &bull; Est. 1939
