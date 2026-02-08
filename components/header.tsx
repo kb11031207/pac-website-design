@@ -34,6 +34,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl md:text-2xl font-bold text-[#788668]">Principia College</span>
+            <Image src="/principia-logo.png" alt="Principia College" width={100} height={100} />
           </Link>
 
           {/* Desktop Navigation */}

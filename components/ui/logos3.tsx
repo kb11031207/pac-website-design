@@ -75,13 +75,13 @@ const Logos3 = ({
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-64">
+    <section className="py-12 md:py-16">
       <div className="container flex flex-col items-center text-center">
-        <h1 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
+        <h2 className="mb-6 text-2xl font-bold text-pretty lg:text-4xl text-[#3D3D3D]">
           {heading}
-        </h1>
+        </h2>
       </div>
-      <div className="pt-10 md:pt-16 lg:pt-20">
+      <div className="pt-6 md:pt-8">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
             opts={{ loop: true }}
