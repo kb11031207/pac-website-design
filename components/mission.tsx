@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Logos3 } from "@/components/ui/logos3"
 
 export function Mission() {
   return (
@@ -18,6 +19,7 @@ export function Mission() {
             <Link href="/register">Register Now</Link>
           </Button>
         </div>
+        <Logos3 heading="PAC BY THE NUMBERS SECTION" />
       </div>
     </section>
   )
