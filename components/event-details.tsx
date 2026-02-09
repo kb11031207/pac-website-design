@@ -95,6 +95,39 @@ export function EventDetails() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Who Should Attend */}
+        <Card className="mt-8 bg-white border-none shadow-lg">
+          <CardContent className="p-8">
+            <p className="text-lg font-semibold text-[#788668] mb-6">Who Should Attend</p>
+            <ul className="space-y-4">
+              <li className="flex gap-3">
+                <span className="w-1 shrink-0 rounded-full bg-[#788668] mt-2.5 h-1.5 min-w-[6px]" aria-hidden />
+                <span className="text-[#3D3D3D] text-base leading-relaxed">
+                  Students interested in public policy, social justice, or international affairs
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-1 shrink-0 rounded-full bg-[#788668] mt-2.5 h-1.5 min-w-[6px]" aria-hidden />
+                <span className="text-[#3D3D3D] text-base leading-relaxed">
+                  Educators seeking fresh perspectives on current events
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-1 shrink-0 rounded-full bg-[#788668] mt-2.5 h-1.5 min-w-[6px]" aria-hidden />
+                <span className="text-[#3D3D3D] text-base leading-relaxed">
+                  Community members committed to informed civic participation
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-1 shrink-0 rounded-full bg-[#788668] mt-2.5 h-1.5 min-w-[6px]" aria-hidden />
+                <span className="text-[#3D3D3D] text-base leading-relaxed">
+                  Anyone who believes understanding beats assumption
+                </span>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )
