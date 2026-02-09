@@ -10,7 +10,7 @@ const whatToExpectData: TimelineEntry[] = [
   {
     title: "Thursday Evening",
     content: (
-      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+      <p className="text-white/95 text-sm md:text-base font-normal leading-relaxed">
         The conference opens with Francisco Cantú&apos;s powerful reflection on borders, enforcement, and conscience. Following his talk, join us for an informal reception where you can continue conversations and meet fellow attendees.
       </p>
     ),
@@ -18,7 +18,7 @@ const whatToExpectData: TimelineEntry[] = [
   {
     title: "Friday Afternoon & Evening",
     content: (
-      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+      <p className="text-white/95 text-sm md:text-base font-normal leading-relaxed">
         Four distinct sessions offer different lenses on immigration—from scholarly research to legal realities to grassroots activism. Each session includes dedicated Q&A time. The conference concludes with Dr. Adeyemo&apos;s keynote, followed by a closing reception.
       </p>
     ),
@@ -27,21 +27,21 @@ const whatToExpectData: TimelineEntry[] = [
     title: "Throughout the Conference",
     content: (
       <div>
-        <ul className="space-y-2 text-[#3D3D3D] text-sm md:text-base font-normal">
+        <ul className="space-y-2 text-white/95 text-sm md:text-base font-normal">
           <li className="flex gap-2 items-center">
-            <span className="text-[#788668] shrink-0">•</span>
+            <span className="text-white shrink-0">•</span>
             Interactive discussion sessions between talks
           </li>
           <li className="flex gap-2 items-center">
-            <span className="text-[#788668] shrink-0">•</span>
+            <span className="text-white shrink-0">•</span>
             Resource tables from immigrant advocacy organizations
           </li>
           <li className="flex gap-2 items-center">
-            <span className="text-[#788668] shrink-0">•</span>
+            <span className="text-white shrink-0">•</span>
             Networking opportunities with speakers and attendees
           </li>
           <li className="flex gap-2 items-center">
-            <span className="text-[#788668] shrink-0">•</span>
+            <span className="text-white shrink-0">•</span>
             Student-led breakout conversations
           </li>
         </ul>
@@ -51,7 +51,7 @@ const whatToExpectData: TimelineEntry[] = [
   {
     title: "After PAC",
     content: (
-      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+      <p className="text-white/95 text-sm md:text-base font-normal leading-relaxed">
         All attendees receive access to session recordings, a curated reading list, and information about getting involved in immigration advocacy.
       </p>
     ),
@@ -188,6 +188,7 @@ export function EventDetails() {
             data={whatToExpectData}
             title="What to Expect"
             subtitle="A quick guide to the two-day experience."
+            variant="dark"
           />
         </div>
       </div>

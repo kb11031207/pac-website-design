@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
@@ -14,9 +14,11 @@ interface TimelineProps {
   subtitle?: string;
   /** When true, no outer background/padding block is rendered (for embedding in a section). */
   embedded?: boolean;
+  /** When "dark", uses #788668 background and light text/dots for contrast. */
+  variant?: "light" | "dark";
 }
 
-export function Timeline({ data, title, subtitle, embedded = false }: TimelineProps) {
+export function Timeline({ data, title, subtitle, embedded = false, variant = "light" }: TimelineProps) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -36,21 +38,24 @@ export function Timeline({ data, title, subtitle, embedded = false }: TimelinePr
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  const isDark = variant === "dark";
   const wrapperClass = embedded
     ? "w-full"
-    : "w-full bg-white font-sans md:px-10";
+    : isDark
+      ? "w-full bg-[#788668] font-sans md:px-10"
+      : "w-full bg-white font-sans md:px-10";
 
   return (
     <div className={wrapperClass} ref={containerRef}>
       {(title != null || subtitle != null) && (
         <div className="max-w-7xl mx-auto py-12 px-4 md:px-8 lg:px-10">
           {title != null && (
-            <h2 className="text-lg md:text-4xl mb-4 text-[#3D3D3D] max-w-4xl font-bold">
+            <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-bold ${isDark ? "text-white" : "text-[#3D3D3D]"}`}>
               {title}
             </h2>
           )}
           {subtitle != null && (
-            <p className="text-[#5C5C5C] text-sm md:text-base max-w-sm">
+            <p className={`text-sm md:text-base max-w-sm ${isDark ? "text-white/90" : "text-[#5C5C5C]"}`}>
               {subtitle}
             </p>
           )}
@@ -64,16 +69,16 @@ export function Timeline({ data, title, subtitle, embedded = false }: TimelinePr
             className="flex justify-start pt-6 md:pt-16 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-[#F8F4EC] border border-[#788668]/30 p-2" />
+              <div className={`h-10 absolute left-3 md:left-3 w-10 rounded-full flex items-center justify-center ${isDark ? "bg-[#788668]" : "bg-white"}`}>
+                <div className={`h-4 w-4 rounded-full p-2 ${isDark ? "bg-white/90 border border-white" : "bg-[#F8F4EC] border border-[#788668]/30"}`} />
               </div>
-              <h3 className="hidden md:block text-lg md:pl-20 md:text-xl font-semibold text-[#788668]">
+              <h3 className={`hidden md:block text-lg md:pl-20 md:text-xl font-semibold ${isDark ? "text-white" : "text-[#788668]"}`}>
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-lg mb-4 text-left font-semibold text-[#788668]">
+              <h3 className={`md:hidden block text-lg mb-4 text-left font-semibold ${isDark ? "text-white" : "text-[#788668]"}`}>
                 {item.title}
               </h3>
               {item.content}
@@ -82,14 +87,14 @@ export function Timeline({ data, title, subtitle, embedded = false }: TimelinePr
         ))}
         <div
           style={{ height: height + "px" }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-[#F8F4EC] to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className={`absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] ${isDark ? "via-white/30" : "via-[#F8F4EC]"}`}
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-[#788668] via-[#A3C2B8] to-transparent from-[0%] via-[10%] rounded-full"
+            className={`absolute inset-x-0 top-0 w-[2px] rounded-full ${isDark ? "bg-gradient-to-t from-white/60 via-white/40 to-transparent from-[0%] via-[10%]" : "bg-gradient-to-t from-[#788668] via-[#A3C2B8] to-transparent from-[0%] via-[10%]"}`}
           />
         </div>
       </div>
