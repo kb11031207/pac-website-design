@@ -42,20 +42,20 @@ export function Timeline({ data, title, subtitle, embedded = false, variant = "l
   const wrapperClass = embedded
     ? "w-full"
     : isDark
-      ? "w-full bg-[#788668] font-sans md:px-10"
+      ? "w-full bg-[#788668] font-sans md:px-10 rounded-2xl overflow-hidden"
       : "w-full bg-white font-sans md:px-10";
 
   return (
     <div className={wrapperClass} ref={containerRef}>
       {(title != null || subtitle != null) && (
-        <div className="max-w-7xl mx-auto py-12 px-4 md:px-8 lg:px-10">
+        <div className="max-w-7xl mx-auto pt-12 pb-4 px-4 md:px-8 lg:px-10 text-center">
           {title != null && (
-            <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-bold ${isDark ? "text-white" : "text-[#3D3D3D]"}`}>
+            <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-bold mx-auto ${isDark ? "text-white" : "text-[#3D3D3D]"}`}>
               {title}
             </h2>
           )}
           {subtitle != null && (
-            <p className={`text-sm md:text-base max-w-sm ${isDark ? "text-white/90" : "text-[#5C5C5C]"}`}>
+            <p className={`text-sm md:text-base max-w-sm mx-auto ${isDark ? "text-white/90" : "text-[#5C5C5C]"}`}>
               {subtitle}
             </p>
           )}
@@ -66,7 +66,7 @@ export function Timeline({ data, title, subtitle, embedded = false, variant = "l
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-6 md:pt-16 md:gap-10"
+            className={`flex justify-start pt-6 md:pt-16 md:gap-10 ${index === 0 ? "pt-4 md:pt-8" : ""}`}
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className={`h-10 absolute left-3 md:left-3 w-10 rounded-full flex items-center justify-center ${isDark ? "bg-[#788668]" : "bg-white"}`}>
