@@ -62,9 +62,10 @@ const Logos3 = ({
             plugins={[AutoScroll({ playOnInit: true })]}
           >
             <CarouselContent className="ml-0">
-              {logos.map((logo) => (
+              {/* Duplicate logos so the strip is longer than the viewport and always scrolls */}
+              {[...logos, ...logos, ...logos].map((logo, index) => (
                 <CarouselItem
-                  key={logo.id}
+                  key={`${logo.id}-${index}`}
                   className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                 >
                   <div className="mx-10 flex shrink-0 items-center justify-center">
