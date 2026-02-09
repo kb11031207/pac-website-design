@@ -14,6 +14,9 @@ import {
   Calendar,
   TrendingUp,
   GraduationCap,
+  Handshake,
+  
+  
 } from "lucide-react"
 import { motion, useScroll, useTransform, useInView, useSpring } from "framer-motion"
 import { getAssetPath } from "@/lib/utils"
@@ -88,9 +91,9 @@ export default function AboutUsSection() {
 
   const stats = [
     { icon: <Calendar />, value: 85, label: "Years Running", suffix: "+" },
-    { icon: <Users />, value: 500, label: "Speakers Hosted", suffix: "+" },
-    { icon: <GraduationCap />, value: 350, label: "Principia Students", suffix: "" },
-    { icon: <TrendingUp />, value: 30, label: "Countries Represented", suffix: "+" },
+    { icon: <Users />, value: 250, label: "Speakers Hosted", suffix: "+" },
+    { icon: <MessageCircle />, value: 2, label: "Days of Thoughtful Conversation", suffix: "" },
+    { icon: <Handshake />, value: 100, label: "Student-Led", suffix: "%" },
   ]
 
   return (
