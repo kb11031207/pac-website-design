@@ -265,7 +265,7 @@ export default function AboutUsSection() {
             <h3 className="text-2xl font-medium mb-2">Ready to join the conversation?</h3>
             <p className="text-white/80">Register for PAC 2025 and be part of the dialogue.</p>
           </div>
-          <Link href="/#event">
+          <Link href="/register">
             <motion.span
               className="inline-flex items-center gap-2 bg-[#788668] hover:bg-[#788668]/90 text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer"
               whileHover={{ scale: 1.05 }}
