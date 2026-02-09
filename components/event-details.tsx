@@ -91,7 +91,7 @@ export function EventDetails() {
                 </div>
                 <div>
                   <p className="text-sm text-[#788668] font-medium">Location</p>
-                  <p className="text-xl font-bold text-[#3D3D3D]">Wannamaker</p>
+                  <p className="text-xl font-bold text-[#3D3D3D]">Wanamaker</p>
                   <p className="text-[#5C5C5C]">Principia College</p>
                 </div>
               </CardContent>
