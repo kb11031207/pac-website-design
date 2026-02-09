@@ -8,11 +8,17 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Full background image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={getAssetPath("/ValeriaHero.png")}
-          alt="Diverse community coming together in unity"
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcSet={getAssetPath("/ValeriaHero(500x600px).png")}
+          />
+          <img
+            src={getAssetPath("/ValeriaHero.png")}
+            alt="Diverse community coming together in unity"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         {/* Gradient overlay: darkens on left for text, transparent toward right for image */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#3D3D3D]/85 via-[#3D3D3D]/50 to-[#3D3D3D]/30 md:from-[#3D3D3D]/90 md:via-[#3D3D3D]/40 md:to-[#3D3D3D]/10" />
         {/* Bottom gradient for smooth transition */}
