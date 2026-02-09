@@ -75,7 +75,7 @@ export default function AboutUsSection() {
       title: "A Legacy of Influence",
       description:
         "PAC alumni have gone on to careers in Congress, the State Department, international NGOs, and social enterprises. Past speakers credit PAC audiences with some of their most thoughtful exchanges.",
-      position: "left",
+      position: "right",
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
