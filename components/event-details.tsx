@@ -70,7 +70,7 @@ export function EventDetails() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <Card className="bg-white border-none shadow-lg">
               <CardContent className="p-6 flex items-center gap-4">
@@ -119,8 +119,15 @@ export function EventDetails() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#3D3D3D]/60 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
-              <p className="text-white text-xl font-bold">Principia College</p>
-              <p className="text-white/80">Elsah, Illinois</p>
+              <a
+                href="https://tours.covecreekproductions.com/principia/?utm_source=visit-page&utm_medium=click-through"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white hover:text-white/90 transition-colors underline-offset-2 hover:underline"
+              >
+                <p className="text-xl font-bold">Principia College</p>
+                <p className="text-white/80">Elsah, Illinois</p>
+              </a>
             </div>
           </div>
         </div>

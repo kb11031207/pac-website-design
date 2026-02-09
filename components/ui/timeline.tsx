@@ -48,14 +48,14 @@ export function Timeline({ data, title, subtitle, embedded = false, variant = "l
   return (
     <div className={wrapperClass} ref={containerRef}>
       {(title != null || subtitle != null) && (
-        <div className="max-w-7xl mx-auto pt-12 pb-4 px-4 md:px-8 lg:px-10 text-center">
+        <div className="max-w-7xl mx-auto pt-12 pb-4 px-4 md:px-8 lg:px-10">
           {title != null && (
-            <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-bold mx-auto ${isDark ? "text-white" : "text-[#3D3D3D]"}`}>
+            <h2 className={`text-lg md:text-4xl mb-4 max-w-4xl font-bold ${isDark ? "text-white" : "text-[#3D3D3D]"}`}>
               {title}
             </h2>
           )}
           {subtitle != null && (
-            <p className={`text-sm md:text-base max-w-sm mx-auto ${isDark ? "text-white/90" : "text-[#5C5C5C]"}`}>
+            <p className={`text-sm md:text-base max-w-sm ${isDark ? "text-white/90" : "text-[#5C5C5C]"}`}>
               {subtitle}
             </p>
           )}
