@@ -45,7 +45,7 @@ export const speakers: Speaker[] = [
   {
     slug: "lauren-blodgett",
     name: "Lauren Blodgett",
-    image: "/SpeakersHeadshots/Blodgett-Lauren.jpg",
+    image: "/SpeakersHeadshots/1620529482973.jpeg",
     sessionTime: "Friday, April 3 • 3:10–4:20 PM",
     sessionRole: null,
     shortBio:
