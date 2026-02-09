@@ -34,22 +34,35 @@ const Logos3 = ({
     },
     {
       id: "logo-2",
-      description: "250+ Students",
+      description: "Center for Civic & Global Engagement",
       image: getAssetPath("/2.png"),
       className: "h-20 w-auto",
     },
     {
       id: "logo-3",
-      description: "5000+ Attendees",
+      description: "250+ speaker",
       image: getAssetPath("/3.png"),
       className: "h-20 w-auto",
     },
     {
       id: "logo-4",
-      description: "100% Student-Led",
+      description: "5000+ attendees",
       image: getAssetPath("/4.png"),
       className: "h-20 w-auto",
     },
+    {
+      id: "logo-5",
+      description: "100% Student-Led",
+      image: getAssetPath("/5.png"),
+      className: "h-20 w-auto",
+    },
+    {
+      id: "logo-6",
+      description: "Principia College",
+      image: getAssetPath("/6.png"),
+      className: "h-20 w-auto",
+    },
+
     
   ],
 }: Logos3Props) => {
@@ -63,7 +76,7 @@ const Logos3 = ({
           >
             <CarouselContent className="ml-0">
               {/* Duplicate logos so the strip is longer than the viewport and always scrolls */}
-              {[...logos, ...logos, ...logos].map((logo, index) => (
+              {[...logos].map((logo, index) => (
                 <CarouselItem
                   key={`${logo.id}-${index}`}
                   className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"

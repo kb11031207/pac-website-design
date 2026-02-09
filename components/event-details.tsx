@@ -2,8 +2,61 @@ import Link from "next/link"
 import { Calendar, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Timeline, type TimelineEntry } from "@/components/ui/timeline"
 import { getAssetPath } from "@/lib/utils"
 import { EVENT_SCHEDULE } from "@/lib/constants"
+
+const whatToExpectData: TimelineEntry[] = [
+  {
+    title: "Thursday Evening",
+    content: (
+      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+        The conference opens with Francisco Cantú&apos;s powerful reflection on borders, enforcement, and conscience. Following his talk, join us for an informal reception where you can continue conversations and meet fellow attendees.
+      </p>
+    ),
+  },
+  {
+    title: "Friday Afternoon & Evening",
+    content: (
+      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+        Four distinct sessions offer different lenses on immigration—from scholarly research to legal realities to grassroots activism. Each session includes dedicated Q&A time. The conference concludes with Dr. Adeyemo&apos;s keynote, followed by a closing reception.
+      </p>
+    ),
+  },
+  {
+    title: "Throughout the Conference",
+    content: (
+      <div>
+        <ul className="space-y-2 text-[#3D3D3D] text-sm md:text-base font-normal">
+          <li className="flex gap-2 items-center">
+            <span className="text-[#788668] shrink-0">•</span>
+            Interactive discussion sessions between talks
+          </li>
+          <li className="flex gap-2 items-center">
+            <span className="text-[#788668] shrink-0">•</span>
+            Resource tables from immigrant advocacy organizations
+          </li>
+          <li className="flex gap-2 items-center">
+            <span className="text-[#788668] shrink-0">•</span>
+            Networking opportunities with speakers and attendees
+          </li>
+          <li className="flex gap-2 items-center">
+            <span className="text-[#788668] shrink-0">•</span>
+            Student-led breakout conversations
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    title: "After PAC",
+    content: (
+      <p className="text-[#3D3D3D] text-sm md:text-base font-normal leading-relaxed">
+        All attendees receive access to session recordings, a curated reading list, and information about getting involved in immigration advocacy.
+      </p>
+    ),
+  },
+]
 
 export function EventDetails() {
   return (
@@ -128,6 +181,15 @@ export function EventDetails() {
             </ul>
           </CardContent>
         </Card>
+
+        {/* What to Expect - timeline */}
+        <div className="mt-8">
+          <Timeline
+            data={whatToExpectData}
+            title="What to Expect"
+            subtitle="A quick guide to the two-day experience."
+          />
+        </div>
       </div>
     </section>
   )
