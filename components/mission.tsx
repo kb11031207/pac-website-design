@@ -6,7 +6,7 @@ export function Mission() {
   return (
     <section id="mission" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-6 text-balance">
             Journeys of Hope: Understanding Immigration
           </h2>

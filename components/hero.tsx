@@ -9,7 +9,7 @@ export function Hero() {
       {/* Full background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={getAssetPath("/Valeria.png")}
+          src={getAssetPath("/NewHero.png")}
           alt="Diverse community coming together in unity"
           className="w-full h-full object-cover"
         />
