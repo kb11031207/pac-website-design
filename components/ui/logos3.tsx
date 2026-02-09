@@ -62,6 +62,12 @@ const Logos3 = ({
       image: getAssetPath("/4.png"),
       className: "h-20 w-auto",
     },
+    {
+      id: "logo-7",
+      description: "Principia College",
+      image: getAssetPath("/7.png"),
+      className: "h-20 w-auto",
+    },
 
     
   ],
