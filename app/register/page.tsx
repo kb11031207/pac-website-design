@@ -21,7 +21,7 @@ import { useState } from "react"
 
 const SESSION_OPTIONS = [
   { value: "full", label: "Full conference (both days)" },
-  { value: "cantu", label: "Thu 7:30 PM – Francisco Cantú (Opening Speaker)" },
+  { value: "cantu", label: "Thu 7:30 PM – Opening Speaker (To be announced)" },
   { value: "golash-boza", label: "Fri 1:00 PM – Tanya Golash-Boza" },
   { value: "vazquez-scolari", label: "Fri 2:20 PM – Laurie Vázquez Scolari" },
   { value: "blodgett", label: "Fri 3:10 PM – Lauren Blodgett" },

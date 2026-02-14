@@ -6,6 +6,7 @@ export type Speaker = {
   sessionRole: string | null
   shortBio: string
   whatToExpect: string
+  status: "draft" | "published"
 }
 
 export const speakers: Speaker[] = [
@@ -19,6 +20,7 @@ export const speakers: Speaker[] = [
       "Former U.S. Border Patrol agent turned acclaimed author. His memoir The Line Becomes a River offers a rare insider's perspective on border enforcement, blending personal experience with profound moral reckoning. Cantú's work has appeared in The New York Times, Harper's, and The Guardian.",
     whatToExpect:
       "A raw, honest examination of what it means to enforce immigration policy on the ground, and the human cost of the border.",
+    status: "draft",
   },
   {
     slug: "tanya-golash-boza",
@@ -30,6 +32,7 @@ export const speakers: Speaker[] = [
       "Professor of Sociology at UC Merced and leading scholar on deportation and immigration policy. Author of Deported: Immigrant Policing, Disposable Labor, and Global Capitalism and Race and Racisms: A Critical Approach. Dr. Golash-Boza has interviewed hundreds of deportees across three continents.",
     whatToExpect:
       "Data-driven insights into mass deportation's impact on families and communities, grounded in years of field research.",
+    status: "published",
   },
   {
     slug: "laurie-vazquez-scolari",
@@ -41,6 +44,7 @@ export const speakers: Speaker[] = [
       "Immigration attorney and advocate with over a decade of experience representing asylum seekers, DACA recipients, and families facing separation. Vázquez Scolari brings frontline experience from the legal battles that determine who stays and who goes.",
     whatToExpect:
       "Real stories from the legal trenches, and what's at stake when immigration is a courtroom decision.",
+    status: "published",
   },
   {
     slug: "lauren-blodgett",
@@ -52,6 +56,7 @@ export const speakers: Speaker[] = [
       "Activist, organizer, and educator working at the intersection of immigration justice and youth empowerment. Blodgett has led workshops across the country helping young people find their voice in advocacy and policy change.",
     whatToExpect:
       "Practical strategies for turning concern into action, and how students can influence immigration policy.",
+    status: "published",
   },
   {
     slug: "lola-adeyemo",
@@ -63,8 +68,11 @@ export const speakers: Speaker[] = [
       "Scholar, storyteller, and expert on immigrant identity and belonging. Dr. Adeyemo's research examines how immigrant communities build home in new lands while maintaining connections to their heritage. Her work bridges academic research with deeply personal narrative.",
     whatToExpect:
       "A powerful closing keynote on what \"home\" means when you carry it across borders—and how we can build a more welcoming America.",
+    status: "published",
   },
 ]
+
+export const publishedSpeakers = speakers.filter((s) => s.status === "published")
 
 export function getSpeakerBySlug(slug: string): Speaker | undefined {
   return speakers.find((s) => s.slug === slug)

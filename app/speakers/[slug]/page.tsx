@@ -4,11 +4,11 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Clock, ArrowRight } from "lucide-react"
-import { getSpeakerBySlug, speakers } from "@/lib/speakers"
+import { getSpeakerBySlug, publishedSpeakers } from "@/lib/speakers"
 import { getAssetPath } from "@/lib/utils"
 
 export async function generateStaticParams() {
-  return speakers.map((speaker) => ({
+  return publishedSpeakers.map((speaker) => ({
     slug: speaker.slug,
   }))
 }
@@ -23,6 +23,38 @@ export default async function SpeakerPage({
 
   if (!speaker) {
     notFound()
+  }
+
+  if (speaker.status === "draft") {
+    return (
+      <main className="min-h-screen">
+        <Header />
+        <div className="pt-20 md:pt-24 pb-20 md:pb-32 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-8">
+              <Button variant="ghost" asChild className="text-[#788668] hover:text-[#6a7659]">
+                <Link href="/#speaker" className="flex items-center gap-2">
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Speakers
+                </Link>
+              </Button>
+            </div>
+            <div className="rounded-3xl bg-[#F8F4EC] border border-[#788668]/20 p-12 md:p-16 text-center">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#3D3D3D] mb-4">
+                Opening Speaker
+              </h1>
+              <p className="text-lg text-[#5C5C5C] mb-8">
+                Details will be announced soon. Check back later.
+              </p>
+              <Button asChild size="lg" className="bg-[#788668] hover:bg-[#6a7659] text-white gap-2">
+                <Link href="/#speaker">Back to Speakers</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </main>
+    )
   }
 
   const sessionDisplay = speaker.sessionRole

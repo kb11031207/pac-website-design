@@ -4,7 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Quote, ArrowRight, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { speakers } from "@/lib/speakers"
+import { speakers, publishedSpeakers } from "@/lib/speakers"
 import { getAssetPath } from "@/lib/utils"
 
 const containerVariants = {
@@ -28,10 +28,34 @@ const itemVariants = {
   },
 }
 
-function getRoleLabel(speaker: (typeof speakers)[number], index: number): string {
+function getRoleLabel(
+  speaker: (typeof speakers)[number],
+  index: number
+): string {
   if (speaker.sessionRole === "Keynote Speaker") return "Keynote"
   if (index === 0) return "Opening"
   return "Speaker"
+}
+
+const OPENING_PLACEHOLDER_TIME = "Thursday, April 2 • 7:30–8:30 PM"
+
+function OpeningPlaceholderCard() {
+  return (
+    <motion.div
+      variants={itemVariants}
+      className="relative overflow-hidden rounded-2xl shadow-lg h-full border-2 border-dashed border-[#788668]/40 bg-[#F8F4EC]/80 flex flex-col items-center justify-center min-h-[480px] p-8 text-center"
+    >
+      <span className="shrink-0 text-xs font-semibold tracking-wide uppercase px-3 py-1.5 rounded-full bg-[#788668]/90 text-white mb-4">
+        Opening
+      </span>
+      <Clock className="w-10 h-10 text-[#788668]/50 mb-4" />
+      <p className="text-lg font-bold text-[#3D3D3D] mb-2">
+        Opening Speaker
+      </p>
+      <p className="text-[#5C5C5C] text-sm">To be announced</p>
+      <p className="text-[#5C5C5C] text-xs mt-4">{OPENING_PLACEHOLDER_TIME}</p>
+    </motion.div>
+  )
 }
 
 function SpeakerCard({
@@ -117,7 +141,7 @@ export function Speaker() {
           </p>
         </div>
 
-        {/* Speakers grid - uniform cards, no col-span for keynote */}
+        {/* Speakers grid - uniform cards, optional placeholder for draft opening speaker */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
@@ -125,8 +149,15 @@ export function Speaker() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {speakers.map((speaker, index) => (
-            <SpeakerCard key={speaker.slug} speaker={speaker} index={index} />
+          {speakers[0].status === "draft" && (
+            <OpeningPlaceholderCard key="opening-placeholder" />
+          )}
+          {publishedSpeakers.map((speaker, i) => (
+            <SpeakerCard
+              key={speaker.slug}
+              speaker={speaker}
+              index={speakers[0].status === "draft" ? i + 1 : i}
+            />
           ))}
         </motion.div>
 

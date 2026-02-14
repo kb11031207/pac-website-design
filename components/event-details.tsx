@@ -11,7 +11,7 @@ const whatToExpectData: TimelineEntry[] = [
     title: "Thursday Evening",
     content: (
       <p className="text-white/95 text-sm md:text-base font-normal leading-relaxed">
-        The conference opens with Francisco Cantú&apos;s powerful reflection on borders, enforcement, and conscience. Following his talk, join us for an informal reception where you can continue conversations and meet fellow attendees.
+        The conference opens with our opening speaker&apos;s powerful reflection on borders, enforcement, and conscience. Following the talk, join us for an informal reception where you can continue conversations and meet fellow attendees.
       </p>
     ),
   },
