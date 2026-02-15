@@ -17,7 +17,7 @@ const faqItems = [
   {
     question: "Can I attend just one session instead of the full conference?",
     answer:
-      "Yes! While we encourage attending the full conference for the complete experience, you're welcome to register for individual sessions that fit your schedule.",
+      "Yes! While we encourage attending the full conference for the complete experience, you're welcome to take part in individual sessions.",
   },
   {
     question: "Is this only for college students?",
@@ -32,7 +32,7 @@ const faqItems = [
   {
     question: "Will food be provided?",
     answer:
-      "Light refreshments will be available at the Thursday evening and Friday evening receptions. Information about nearby dining options will be included in your confirmation email.",
+      "Light refreshments will be available at the Thursday evening and Friday evening receptions. Information about on-campus dining options will be included in your confirmation email.",
   },
   {
     question: "Is the venue accessible?",
@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "Will sessions be recorded?",
     answer:
-      "Yes. All registered attendees will receive access to session recordings within one week of the conference.",
+      "Most sessions will be recorded. All registered attendees will receive access to session recordings within one week of the conference.",
   },
   {
     question: "How can I get involved beyond attending?",

@@ -41,9 +41,9 @@ export const speakers: Speaker[] = [
     sessionTime: "Friday, April 3 • 2:20–3:10 PM",
     sessionRole: null,
     shortBio:
-      "Immigration attorney and advocate with over a decade of experience representing asylum seekers, DACA recipients, and families facing separation. Vázquez Scolari brings frontline experience from the legal battles that determine who stays and who goes.",
+      "Laurie Vázquez Scolari is a Latina higher-education speaker, leader and equity strategist whose personal journey from the lettuce fields of California's Salinas Valley to the college vice presidency shows her commitment to first-generation students and communities of color. Her career spans roles as Dean and Associate Dean of Counseling and Student Support at City College of San Francisco and leadership positions at UC Santa Cruz, the California Community College system, and the City and School District of San Francisco, where she has led cross-sector initiatives to improve college access and success for students of color.",
     whatToExpect:
-      "Real stories from the legal trenches, and what's at stake when immigration is a courtroom decision.",
+      "Insights from a first-generation Latina leader on college access, equity, and student success for communities of color—including her work at Foothill College, City College of San Francisco, UC Santa Cruz, and her storytelling platform \"Hoop Talk with Laurie.\"",
     status: "published",
   },
   {
@@ -53,9 +53,9 @@ export const speakers: Speaker[] = [
     sessionTime: "Friday, April 3 • 3:20–4:10 PM",
     sessionRole: null,
     shortBio:
-      "Activist, organizer, and educator working at the intersection of immigration justice and youth empowerment. Blodgett has led workshops across the country helping young people find their voice in advocacy and policy change.",
+      "Lauren Blodgett is an immigration attorney and founder of The Brave House in New York City, a nonprofit providing legal, holistic, and community support to young immigrant women and gender-expansive youth. Previously an Equal Justice Works Fellow and staff attorney at Safe Passage Project, she represented over 70 refugee children fleeing gender-based violence. A Forbes 30 Under 30 honoree, TEDx speaker, and Executive Director of The Brave House since 2018, her work addresses critical gaps in support for immigrant girls facing deportation and trauma.",
     whatToExpect:
-      "Practical strategies for turning concern into action, and how students can influence immigration policy.",
+      "Real-world legal advocacy for immigrant youth, holistic wraparound support models, and stories from representing refugee children and leading The Brave House—integrating legal aid with mentorship and shelter services.",
     status: "published",
   },
   {

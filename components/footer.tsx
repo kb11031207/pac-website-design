@@ -33,24 +33,6 @@ export function Footer() {
             <p className="text-white/80 mb-2">Follow @PrincipiaPAC</p>
             <div className="flex gap-3">
               <a
-                href="https://twitter.com/PrincipiaPAC"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://www.facebook.com/PrincipiaPAC"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-white transition-colors"
-                aria-label="Facebook"
-              >
-                Facebook
-              </a>
-              <a
                 href="https://www.instagram.com/PrincipiaPAC"
                 target="_blank"
                 rel="noopener noreferrer"

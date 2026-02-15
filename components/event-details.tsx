@@ -63,7 +63,7 @@ export function EventDetails() {
     <section id="event" className="py-20 md:py-32 bg-[#F2D497]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-4 text-balance">Join Us</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-4 text-balance">Event Details</h2>
           <p className="text-lg text-[#5C5C5C] mb-6">Be part of this meaningful dialogue</p>
           <Button asChild className="bg-[#788668] hover:bg-[#788668]/90 text-white px-8 py-3">
             <Link href="/register">Register Now</Link>
