@@ -17,7 +17,7 @@ const SESSION_OPTIONS = [
   { value: "cantu", label: "Thu 7:30 PM – Opening Speaker (To be announced)" },
   { value: "golash-boza", label: "Fri 1:00 PM – Tanya Golash-Boza" },
   { value: "vazquez-scolari", label: "Fri 2:20 PM – Laurie Vázquez Scolari" },
-  { value: "blodgett", label: "Fri 3:10 PM – Lauren Blodgett" },
+  { value: "blodgett", label: "Fri 3:20 PM – Lauren Blodgett" },
   { value: "adeyemo", label: "Fri 7:30 PM – Dr. Lola Adeyemo (Keynote Speaker)" },
   { value: "panels", label: "Panel discussions" },
   { value: "other", label: "Other / Not sure yet" },

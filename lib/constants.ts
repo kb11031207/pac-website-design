@@ -20,7 +20,7 @@ export const EVENT_SCHEDULE = [
   },
   {
     day: "Friday, April 3",
-    time: "3:10–4:20 PM",
+    time: "3:20–4:10 PM",
     speaker: "Lauren Blodgett",
     role: null,
   },

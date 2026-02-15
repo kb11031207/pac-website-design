@@ -50,7 +50,7 @@ export const speakers: Speaker[] = [
     slug: "lauren-blodgett",
     name: "Lauren Blodgett",
     image: "/SpeakersHeadshots/Lauren.png",
-    sessionTime: "Friday, April 3 • 3:10–4:20 PM",
+    sessionTime: "Friday, April 3 • 3:20–4:10 PM",
     sessionRole: null,
     shortBio:
       "Activist, organizer, and educator working at the intersection of immigration justice and youth empowerment. Blodgett has led workshops across the country helping young people find their voice in advocacy and policy change.",
