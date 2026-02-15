@@ -258,7 +258,7 @@ const TestimonialCard = ({
               >
                 {testimonial.name}
               </motion.p>
-              <div className="py-8 text-[#3D3D3D]/80 px-0 md:px-20 text-3xl lowercase font-thin font-serif leading-snug tracking-wide">
+              <div className="py-8 text-[#3D3D3D]/80 px-0 md:px-20 text-3xl font-thin font-serif leading-snug tracking-wide">
                 <Quote className="h-6 w-6 text-[#3D3D3D]/70" />
                 {testimonial.description}
               </div>
