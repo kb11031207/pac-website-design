@@ -254,7 +254,7 @@ const TestimonialCard = ({
               </motion.p>
               <motion.p
                 layoutId={layout ? `title-${testimonial.name}` : undefined}
-                className="px-0 md:px-20 text-2xl md:text-4xl font-normal italic text-[#3D3D3D]/90 mt-4 font-serif lowercase"
+                className="px-0 md:px-20 text-2xl md:text-4xl font-normal italic text-[#3D3D3D]/90 mt-4 font-serif"
               >
                 {testimonial.name}
               </motion.p>
@@ -316,7 +316,7 @@ const TestimonialCard = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `category-${testimonial.name}` : undefined}
-            className="text-[#3D3D3D]/80 text-xl md:text-2xl font-thin font-serif italic text-center mt-5 lowercase"
+            className="text-[#3D3D3D]/80 text-xl md:text-2xl font-thin font-serif italic text-center mt-5"
           >
             {testimonial.name}.
           </motion.p>

@@ -8,14 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Calendar, MapPin, Users, Heart, Clock } from "lucide-react"
+import { Calendar, MapPin, Users, Heart, Clock, UtensilsCrossed } from "lucide-react"
 import { EVENT_SCHEDULE } from "@/lib/constants"
 import { useState } from "react"
 
@@ -33,15 +26,15 @@ const SESSION_OPTIONS = [
 export default function RegisterPage() {
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
-    affiliation: "",
     role: "student",
-    sessionOfInterest: "",
+    institutionalAffiliation: "",
+    sessionsOfInterest: [] as string[],
     howHeard: "",
     agreeToTerms: false,
+    agreeToCodeOfConduct: false,
   })
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -166,6 +159,42 @@ export default function RegisterPage() {
           </div>
         </section>
 
+        {/* Event Information - Meals, audience, housing, etc. */}
+        <section className="py-8 md:py-12">
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#E5DED3]">
+              <h2 className="text-2xl font-bold text-[#3D3D3D] mb-2 flex items-center gap-2">
+                <UtensilsCrossed className="w-6 h-6 text-[#788668]" />
+                Event Information
+              </h2>
+              <div className="space-y-6 text-[#3D3D3D] text-sm mt-6">
+                <div>
+                  <p className="font-semibold text-[#788668] mb-1">Meals Provided</p>
+                  <ul className="list-disc list-inside space-y-0.5">
+                    <li>Thursday: Lunch and Dinner</li>
+                    <li>Friday: Breakfast, Lunch, and Dinner</li>
+                    <li>Saturday: Breakfast</li>
+                  </ul>
+                  <p className="mt-1 text-[#5c5c5c]">Note: Snacks will not be provided.</p>
+                  <p className="mt-1 text-[#5c5c5c]">Participants may stay Thursday and Friday night.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#788668] mb-1">Type of audience</p>
+                  <p>Community members, High school students, College students and Faculty, Principia Alumni.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#788668] mb-1">Housing and Eligibility</p>
+                  <p>High school students and Community members are not permitted to stay on campus.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-[#788668] mb-1">Additional Information</p>
+                  <p>Registered participants will receive event merchandise.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Registration Form */}
         <section className="py-12 md:py-16">
           <div className="max-w-3xl mx-auto px-4">
@@ -183,30 +212,17 @@ export default function RegisterPage() {
                   Personal Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-[#3D3D3D]">
-                      First Name <span className="text-[#D9A87E]">*</span>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label htmlFor="fullName" className="text-[#3D3D3D]">
+                      Full Name <span className="text-[#D9A87E]">*</span>
                     </Label>
                     <Input
-                      id="firstName"
+                      id="fullName"
                       required
-                      value={formData.firstName}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-[#3D3D3D]">
-                      Last Name <span className="text-[#D9A87E]">*</span>
-                    </Label>
-                    <Input
-                      id="lastName"
-                      required
-                      value={formData.lastName}
-                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                      className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
-                      placeholder="Enter your last name"
+                      placeholder="Enter your full name"
                     />
                   </div>
                   <div className="space-y-2">
@@ -239,24 +255,11 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* Affiliation */}
+              {/* I am registering as (before institutional affiliation) */}
               <div className="mb-10">
                 <h3 className="text-lg font-semibold text-[#788668] mb-4 pb-2 border-b border-[#E5DED3]">
-                  Affiliation
+                  Registration Type
                 </h3>
-                <div className="space-y-2 mb-6">
-                  <Label htmlFor="affiliation" className="text-[#3D3D3D]">
-                    School / Organization
-                  </Label>
-                  <Input
-                    id="affiliation"
-                    value={formData.affiliation}
-                    onChange={(e) => setFormData({ ...formData, affiliation: e.target.value })}
-                    className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
-                    placeholder="e.g., Principia College, Community Member"
-                  />
-                </div>
-
                 <div className="space-y-3">
                   <Label className="text-[#3D3D3D]">I am registering as a:</Label>
                   <RadioGroup
@@ -266,9 +269,9 @@ export default function RegisterPage() {
                   >
                     {[
                       { value: "student", label: "Student" },
-                      { value: "faculty", label: "Faculty/Staff" },
+                      { value: "faculty-staff", label: "Faculty/Staff" },
                       { value: "community", label: "Community Member" },
-                      { value: "other", label: "Other" },
+                      { value: "principia-alumni", label: "Principia Alumni" },
                     ].map((option) => (
                       <div key={option.value} className="flex items-center">
                         <RadioGroupItem
@@ -288,30 +291,59 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* Session of Interest */}
+              {/* Institutional Affiliation */}
               <div className="mb-10">
                 <h3 className="text-lg font-semibold text-[#788668] mb-4 pb-2 border-b border-[#E5DED3]">
-                  Session of Interest
+                  Institutional Affiliation
                 </h3>
                 <div className="space-y-2">
-                  <Label htmlFor="session" className="text-[#3D3D3D]">
-                    Which session or talk are you most interested in?
+                  <Label htmlFor="institutionalAffiliation" className="text-[#3D3D3D]">
+                    Please indicate your home institution if applicable. (Community members may leave this blank.)
                   </Label>
-                  <Select
-                    value={formData.sessionOfInterest}
-                    onValueChange={(value) => setFormData({ ...formData, sessionOfInterest: value })}
-                  >
-                    <SelectTrigger className="w-full border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]">
-                      <SelectValue placeholder="Select a session (optional)" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {SESSION_OPTIONS.map((opt) => (
-                        <SelectItem key={opt.value} value={opt.value} className="text-[#3D3D3D]">
+                  <Input
+                    id="institutionalAffiliation"
+                    value={formData.institutionalAffiliation}
+                    onChange={(e) => setFormData({ ...formData, institutionalAffiliation: e.target.value })}
+                    className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
+                    placeholder="e.g., Principia College, High School Name"
+                  />
+                </div>
+              </div>
+
+              {/* Session(s) of Interest - multi-select */}
+              <div className="mb-10">
+                <h3 className="text-lg font-semibold text-[#788668] mb-4 pb-2 border-b border-[#E5DED3]">
+                  Session(s) of Interest
+                </h3>
+                <div className="space-y-3">
+                  <Label className="text-[#3D3D3D]">
+                    Which session(s) are you interested in? (Select all that apply)
+                  </Label>
+                  <div className="space-y-3">
+                    {SESSION_OPTIONS.map((opt) => (
+                      <div key={opt.value} className="flex items-center gap-3">
+                        <Checkbox
+                          id={`session-${opt.value}`}
+                          checked={formData.sessionsOfInterest.includes(opt.value)}
+                          onCheckedChange={(checked) => {
+                            setFormData((prev) => ({
+                              ...prev,
+                              sessionsOfInterest: checked
+                                ? [...prev.sessionsOfInterest, opt.value]
+                                : prev.sessionsOfInterest.filter((v) => v !== opt.value),
+                            }))
+                          }}
+                          className="border-[#788668] data-[state=checked]:bg-[#788668]"
+                        />
+                        <Label
+                          htmlFor={`session-${opt.value}`}
+                          className="cursor-pointer text-[#3D3D3D]"
+                        >
                           {opt.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -331,6 +363,33 @@ export default function RegisterPage() {
                     className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
                     placeholder="e.g., Social media, Friend, Campus flyer"
                   />
+                </div>
+              </div>
+
+              {/* Participation Agreement - Code of Conduct */}
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-[#788668] mb-2">Participation Agreement</h3>
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="codeOfConduct"
+                    checked={formData.agreeToCodeOfConduct}
+                    onCheckedChange={(checked) =>
+                      setFormData({ ...formData, agreeToCodeOfConduct: checked as boolean })
+                    }
+                    className="mt-1 border-[#788668] data-[state=checked]:bg-[#788668]"
+                  />
+                  <Label htmlFor="codeOfConduct" className="text-[#5c5c5c] leading-relaxed cursor-pointer">
+                    All participants must agree to abide by Principia&apos;s{" "}
+                    <a
+                      href="https://www.principiacollege.edu/fs/resource-manager/view/e0fd4a66-45d7-4420-862e-1733bae7b8bb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#788668] hover:underline font-medium"
+                    >
+                      Code of Conduct
+                    </a>
+                    . <span className="text-[#D9A87E]">*</span>
+                  </Label>
                 </div>
               </div>
 
@@ -354,7 +413,7 @@ export default function RegisterPage() {
               {/* Submit */}
               <Button
                 type="submit"
-                disabled={!formData.agreeToTerms || !formData.firstName || !formData.lastName || !formData.email}
+                disabled={!formData.agreeToTerms || !formData.agreeToCodeOfConduct || !formData.fullName || !formData.email}
                 className="w-full bg-[#788668] hover:bg-[#788668]/90 text-white py-6 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Complete Registration
