@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, MapPin, GraduationCap, Calendar } from "lucide-react"
 import { getMemberBySlug, teamMembers } from "@/lib/team-members"
-import { getAssetPath } from "@/lib/utils"
+import { formatDisplayName } from "@/lib/utils"
 
 export async function generateStaticParams() {
   return teamMembers.map((member) => ({
@@ -40,22 +40,10 @@ export default async function TeamMemberPage({
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Image */}
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-[#F2D497]/30 shadow-lg">
-                <img
-                  src={member.image ? (member.image.startsWith('http') ? member.image : getAssetPath(member.image)) : getAssetPath("/placeholder.svg")}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Details */}
+          <div className="max-w-2xl">
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-[#3D3D3D] mb-4">{member.name}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3D3D3D] mb-4">{formatDisplayName(member.name)}</h1>
                 <p className="text-2xl text-[#788668] font-medium">{member.title}</p>
               </div>
 

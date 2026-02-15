@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { teamMembers } from "@/lib/team-members"
-import { getAssetPath } from "@/lib/utils"
+import { formatDisplayName } from "@/lib/utils"
 
 export function BoardMembers() {
   return (
@@ -19,16 +19,9 @@ export function BoardMembers() {
           {teamMembers.map((member, index) => (
             <Link key={index} href={`/team/${member.slug}`}>
               <Card className="bg-white border-none shadow-lg overflow-hidden group hover:shadow-xl transition-all cursor-pointer h-full">
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image ? (member.image.startsWith('http') ? member.image : getAssetPath(member.image)) : getAssetPath("/placeholder.svg")}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
                 <CardContent className="p-6 text-center">
                   <h3 className="text-xl font-bold text-[#3D3D3D] mb-1 group-hover:text-[#788668] transition-colors">
-                    {member.name}
+                    {formatDisplayName(member.name)}
                   </h3>
                   <p className="text-[#788668] font-medium mb-2">{member.title}</p>
                   <p className="text-[#5C5C5C] text-sm">{member.majors}</p>

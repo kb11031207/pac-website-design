@@ -5,6 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/** Formats full name as "First L.I." (first name + last name initials) */
+export function formatDisplayName(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/)
+  if (parts.length <= 1) return fullName
+  const firstName = parts[0]
+  const initials = parts.slice(1).map((p) => p[0] + ".").join("")
+  return `${firstName} ${initials}`
+}
+
 // Helper function to get the correct path for static assets with basePath
 // Use this for images in the public folder when using basePath
 export function getAssetPath(path: string): string {
