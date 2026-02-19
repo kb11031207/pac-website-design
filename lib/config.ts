@@ -1,3 +1,3 @@
 export const config = {
-  googleSheetScriptUrl: "https://script.google.com/a/macros/principia.edu/s/AKfycbyyWzI607NyD9KbdB446KxBRVlQJ_cp5HF62cFJYZymwG9Au-eEneHBj_HBy047uszA/exec"
+  googleSheetScriptUrl: "https://script.google.com/a/macros/principia.edu/s/AKfycbzH5PQ-VIoMHeoLM03ZscxzEbfhpsT-kQfIG7W2RPMemsbnsEUrSHPc8NyWR54Nw0E4/exec"
 }
