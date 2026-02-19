@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -109,7 +110,7 @@ export default function RegisterPage() {
                 asChild
                 className="bg-[#788668] hover:bg-[#788668]/90 text-white px-8 py-3"
               >
-                <a href="/">Return to Home</a>
+                <Link href="/">Return to Home</Link>
               </Button>
             </div>
           </div>
