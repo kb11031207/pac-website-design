@@ -10,6 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, MapPin, Users, Heart, Clock, UtensilsCrossed } from "lucide-react"
 import { EVENT_SCHEDULE } from "@/lib/constants"
+import { config } from "@/lib/config"
 import { useState } from "react"
 
 const SESSION_OPTIONS = [
@@ -25,6 +26,8 @@ const SESSION_OPTIONS = [
 
 export default function RegisterPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -37,10 +40,39 @@ export default function RegisterPage() {
     agreeToCodeOfConduct: false,
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Connect to Google Form or backend when ready
-    setSubmitted(true)
+    setIsSubmitting(true)
+    setSubmitError(null)
+
+    try {
+      const response = await fetch(config.googleSheetScriptUrl, {
+        method: "POST",
+        mode: "no-cors", // Google Apps Script requires no-cors for public access
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone || "",
+          role: formData.role,
+          institutionalAffiliation: formData.institutionalAffiliation || "",
+          sessionsOfInterest: formData.sessionsOfInterest.join(", ") || "",
+          howHeard: formData.howHeard || "",
+          agreeToTerms: formData.agreeToTerms ? "Yes" : "No",
+          agreeToCodeOfConduct: formData.agreeToCodeOfConduct ? "Yes" : "No",
+        }),
+      })
+
+      // With no-cors mode, we can't read the response, so assume success
+      // The Google Script will handle the submission
+      setSubmitted(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setSubmitError("There was an error submitting your registration. Please try again or contact pac@principia.edu for assistance.")
+      setIsSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -410,13 +442,20 @@ export default function RegisterPage() {
                 </div>
               </div>
 
+              {/* Error Message */}
+              {submitError && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-sm">{submitError}</p>
+                </div>
+              )}
+
               {/* Submit */}
               <Button
                 type="submit"
-                disabled={!formData.agreeToTerms || !formData.agreeToCodeOfConduct || !formData.fullName || !formData.email}
+                disabled={!formData.agreeToTerms || !formData.agreeToCodeOfConduct || !formData.fullName || !formData.email || isSubmitting}
                 className="w-full bg-[#788668] hover:bg-[#788668]/90 text-white py-6 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Complete Registration
+                {isSubmitting ? "Submitting..." : "Complete Registration"}
               </Button>
 
               <p className="text-center text-sm text-[#5c5c5c] mt-4">
