@@ -93,7 +93,7 @@ export function Speaker() {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3D3D3D] mb-4 text-balance">
-            Meet Our Speakers
+            Guest Speakers
           </h2>
           <p className="text-lg text-[#5C5C5C] max-w-2xl mx-auto text-pretty">
             Five powerful voices sharing stories of borders, belonging, and the
@@ -106,22 +106,6 @@ export function Speaker() {
           <Carousel items={carouselItems} />
         </div>
 
-        {/* Bottom register CTA */}
-        <div className="text-center mt-16 pt-8 border-t border-[#F2D497]/40">
-          <p className="text-[#5C5C5C] mb-5 text-lg">
-            Don&apos;t miss these extraordinary conversations
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-[#D9A87E] hover:bg-[#c9956b] text-white px-10 py-6 text-lg rounded-full gap-2 group"
-          >
-            <Link href="/register">
-              Secure Your Spot
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   )

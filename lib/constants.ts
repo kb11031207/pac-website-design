@@ -8,13 +8,13 @@ export const EVENT_SCHEDULE = [
   {
     day: "Friday, April 3",
     time: "1:00–2:00 PM",
-    speaker: "Tanya Golash-Boza",
+    speaker: "Dr. Tanya Golash-Boza",
     role: null,
   },
   {
     day: "Friday, April 3",
     time: "2:20–3:10 PM",
-    speaker: "Laurie Vázquez Scolari",
+    speaker: "Dr. Laurie Vázquez Scolari",
     role: null,
   },
   {

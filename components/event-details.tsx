@@ -34,10 +34,6 @@ const whatToExpectData: TimelineEntry[] = [
           </li>
           <li className="flex gap-2 items-center">
             <span className="text-white shrink-0">•</span>
-            Resource tables from immigrant advocacy organizations
-          </li>
-          <li className="flex gap-2 items-center">
-            <span className="text-white shrink-0">•</span>
             Networking opportunities with speakers and attendees
           </li>
           <li className="flex gap-2 items-center">
@@ -114,7 +110,7 @@ export function EventDetails() {
           <div className="relative h-[400px] lg:min-h-[420px] rounded-3xl overflow-hidden">
             <img
               src={getAssetPath("/PrincipiaCollegeDrone.png")}
-              alt="Wannamaker building at Principia College"
+              alt="Wanamaker building at Principia College"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#3D3D3D]/60 to-transparent" />

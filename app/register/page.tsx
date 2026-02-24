@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, MapPin, Users, Heart, Clock, UtensilsCrossed } from "lucide-react"
@@ -17,11 +18,10 @@ import { useState } from "react"
 const SESSION_OPTIONS = [
   { value: "full", label: "Full conference (both days)" },
   { value: "cantu", label: "Thu 7:30 PM – Francisco Cantú (Opening Speaker)" },
-  { value: "golash-boza", label: "Fri 1:00 PM – Tanya Golash-Boza" },
-  { value: "vazquez-scolari", label: "Fri 2:20 PM – Laurie Vázquez Scolari" },
+  { value: "golash-boza", label: "Fri 1:00 PM – Dr. Tanya Golash-Boza" },
+  { value: "vazquez-scolari", label: "Fri 2:20 PM – Dr. Laurie Vázquez Scolari" },
   { value: "blodgett", label: "Fri 3:20 PM – Lauren Blodgett" },
   { value: "adeyemo", label: "Fri 7:30 PM – Dr. Lola Adeyemo (Keynote Speaker)" },
-  { value: "panels", label: "Panel discussions" },
   { value: "other", label: "Other / Not sure yet" },
 ]
 
@@ -33,10 +33,13 @@ export default function RegisterPage() {
     fullName: "",
     email: "",
     phone: "",
+    gender: "",
     role: "student",
     institutionalAffiliation: "",
     sessionsOfInterest: [] as string[],
     howHeard: "",
+    interestedInBooks: false,
+    questionsForSpeakers: "",
     agreeToTerms: false,
     agreeToCodeOfConduct: false,
   })
@@ -57,10 +60,13 @@ export default function RegisterPage() {
           fullName: formData.fullName,
           email: formData.email,
           phone: formData.phone || "",
+          gender: formData.gender || "",
           role: formData.role,
           institutionalAffiliation: formData.institutionalAffiliation || "",
           sessionsOfInterest: formData.sessionsOfInterest.join(", ") || "",
           howHeard: formData.howHeard || "",
+          interestedInBooks: formData.interestedInBooks ? "Yes" : "No",
+          questionsForSpeakers: formData.questionsForSpeakers || "",
           agreeToTerms: formData.agreeToTerms ? "Yes" : "No",
           agreeToCodeOfConduct: formData.agreeToCodeOfConduct ? "Yes" : "No",
         }),
@@ -127,9 +133,6 @@ export default function RegisterPage() {
         {/* Hero Section */}
         <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-[#A3C2B8]/20 to-[#F8F4EC]">
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <span className="inline-block bg-[#788668]/10 text-[#788668] px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Join Us
-            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#3D3D3D] mb-6 text-balance">
               Register for{" "}
               <span className="text-[#788668]">Journeys of Hope</span>
@@ -146,7 +149,7 @@ export default function RegisterPage() {
               </div>
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-[#E5DED3]">
                 <MapPin className="w-5 h-5 text-[#D9A87E]" />
-                <span className="text-[#3D3D3D] font-medium">Wannamaker Hall, Principia College</span>
+                <span className="text-[#3D3D3D] font-medium">Wanamaker Hall, Principia College</span>
               </div>
               <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-sm border border-[#E5DED3]">
                 <Users className="w-5 h-5 text-[#D9A87E]" />
@@ -285,6 +288,37 @@ export default function RegisterPage() {
                       placeholder="(555) 123-4567"
                     />
                   </div>
+                  <div className="space-y-2 md:col-span-2">
+                    <Label className="text-[#3D3D3D]">
+                      Gender <span className="text-[#D9A87E]">*</span>
+                    </Label>
+                    <RadioGroup
+                      value={formData.gender}
+                      onValueChange={(value) => setFormData({ ...formData, gender: value })}
+                      className="grid grid-cols-2 md:grid-cols-4 gap-3"
+                    >
+                      {[
+                        { value: "male", label: "Male" },
+                        { value: "female", label: "Female" },
+                        { value: "non-binary", label: "Non binary" },
+                        { value: "other", label: "Other" },
+                      ].map((option) => (
+                        <div key={option.value} className="flex items-center">
+                          <RadioGroupItem
+                            value={option.value}
+                            id={`gender-${option.value}`}
+                            className="border-[#788668] text-[#788668]"
+                          />
+                          <Label
+                            htmlFor={`gender-${option.value}`}
+                            className="ml-2 text-[#3D3D3D] cursor-pointer"
+                          >
+                            {option.label}
+                          </Label>
+                        </div>
+                      ))}
+                    </RadioGroup>
+                  </div>
                 </div>
               </div>
 
@@ -385,17 +419,44 @@ export default function RegisterPage() {
                 <h3 className="text-lg font-semibold text-[#788668] mb-4 pb-2 border-b border-[#E5DED3]">
                   Additional Information
                 </h3>
-                <div className="space-y-2">
-                  <Label htmlFor="howHeard" className="text-[#3D3D3D]">
-                    How did you hear about Journeys of Hope?
-                  </Label>
-                  <Input
-                    id="howHeard"
-                    value={formData.howHeard}
-                    onChange={(e) => setFormData({ ...formData, howHeard: e.target.value })}
-                    className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
-                    placeholder="e.g., Social media, Friend, Campus flyer"
-                  />
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="howHeard" className="text-[#3D3D3D]">
+                      How did you hear about Journeys of Hope?
+                    </Label>
+                    <Input
+                      id="howHeard"
+                      value={formData.howHeard}
+                      onChange={(e) => setFormData({ ...formData, howHeard: e.target.value })}
+                      className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668]"
+                      placeholder="e.g., Social media, Friend, Campus flyer"
+                    />
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="interestedInBooks"
+                      checked={formData.interestedInBooks}
+                      onCheckedChange={(checked) =>
+                        setFormData({ ...formData, interestedInBooks: checked as boolean })
+                      }
+                      className="mt-1 border-[#788668] data-[state=checked]:bg-[#788668]"
+                    />
+                    <Label htmlFor="interestedInBooks" className="text-[#3D3D3D] cursor-pointer leading-relaxed">
+                      I am interested in purchasing books from the speakers.
+                    </Label>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="questionsForSpeakers" className="text-[#3D3D3D]">
+                      Do you have any questions, comments, or insights you&apos;d like to share with the speakers?
+                    </Label>
+                    <Textarea
+                      id="questionsForSpeakers"
+                      value={formData.questionsForSpeakers}
+                      onChange={(e) => setFormData({ ...formData, questionsForSpeakers: e.target.value })}
+                      className="border-[#E5DED3] focus:border-[#788668] focus:ring-[#788668] min-h-[100px]"
+                      placeholder="Optional"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -453,7 +514,7 @@ export default function RegisterPage() {
               {/* Submit */}
               <Button
                 type="submit"
-                disabled={!formData.agreeToTerms || !formData.agreeToCodeOfConduct || !formData.fullName || !formData.email || isSubmitting}
+                disabled={!formData.agreeToTerms || !formData.agreeToCodeOfConduct || !formData.fullName || !formData.email || !formData.gender || isSubmitting}
                 className="w-full bg-[#788668] hover:bg-[#788668]/90 text-white py-6 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Complete Registration"}

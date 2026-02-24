@@ -11,7 +11,7 @@ import { getAssetPath } from "@/lib/utils"
 const navLinks = [
   { href: "#mission", label: "Our Mission" },
   { href: "#event", label: "Event Details" },
-  { href: "#speaker", label: "Guest Speaker" },
+  { href: "#speaker", label: "Guest Speakers" },
   { href: "/register", label: "Register" },
   { href: "/board-members", label: "Our Team" },
   { href: "/about", label: "About" },

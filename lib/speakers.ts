@@ -36,7 +36,7 @@ export const speakers: Speaker[] = [
   },
   {
     slug: "laurie-vazquez-scolari",
-    name: "Laurie Vázquez Scolari",
+    name: "Dr. Laurie Vázquez Scolari",
     image: "/SpeakersHeadshots/Laurie.png",
     sessionTime: "Friday, April 3 • 2:20–3:10 PM",
     sessionRole: null,

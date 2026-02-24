@@ -1,11 +1,39 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Clock, ArrowRight } from "lucide-react"
 import { getSpeakerBySlug, publishedSpeakers } from "@/lib/speakers"
 import { getAssetPath } from "@/lib/utils"
+
+const BOOK_AND_PUBLICATION_TITLES = [
+  "The Line Becomes a River",
+  "The New York Times",
+  "Harper's",
+  "The Guardian",
+  "Deported: Immigrant Policing, Disposable Labor, and Global Capitalism",
+  "Race and Racisms: A Critical Approach",
+  "The Brave House",
+  "Hoop Talk with Laurie",
+  "Forbes 30 Under 30",
+  "Safe Passage Project",
+]
+
+function italicizeTitles(text: string): React.ReactNode {
+  let current: React.ReactNode[] = [text]
+  BOOK_AND_PUBLICATION_TITLES.forEach((title) => {
+    current = current.flatMap((node) => {
+      if (typeof node !== "string") return [node]
+      const segments = node.split(title)
+      return segments.flatMap((seg, i) =>
+        i === 0 ? [seg] : [<em key={`${title}-${i}`}>{title}</em>, seg]
+      )
+    })
+  })
+  return <>{current}</>
+}
 
 export async function generateStaticParams() {
   return publishedSpeakers.map((speaker) => ({
@@ -62,9 +90,9 @@ export default async function SpeakerPage({
     : speaker.sessionTime
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-auto">
       <Header />
-      <div className="pt-20 md:pt-24 pb-20 md:pb-32 bg-white">
+      <div className="pt-20 md:pt-24 pb-20 md:pb-32 bg-white min-h-full">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <Button variant="ghost" asChild className="text-[#788668] hover:text-[#6a7659]">
@@ -104,7 +132,7 @@ export default async function SpeakerPage({
               <div>
                 <h2 className="text-xl font-bold text-[#3D3D3D] mb-3">About</h2>
                 <p className="text-lg text-[#5C5C5C] leading-relaxed">
-                  {speaker.shortBio}
+                  {italicizeTitles(speaker.shortBio)}
                 </p>
               </div>
 
@@ -112,8 +140,18 @@ export default async function SpeakerPage({
                 <h2 className="text-xl font-bold text-[#3D3D3D] mb-3">
                   What to expect
                 </h2>
-                <p className="text-[#5C5C5C] leading-relaxed">{speaker.whatToExpect}</p>
+                <p className="text-[#5C5C5C] leading-relaxed">
+                  {italicizeTitles(speaker.whatToExpect)}
+                </p>
               </div>
+
+              <p className="text-[#5C5C5C] text-sm">
+                Do you have any questions, comments, or insights you&apos;d like to share with the speakers? Share them when you{" "}
+                <Link href="/register" className="text-[#788668] hover:underline font-medium">
+                  register
+                </Link>
+                .
+              </p>
 
               <Button asChild size="lg" className="bg-[#788668] hover:bg-[#6a7659] text-white gap-2">
                 <Link href="/register">

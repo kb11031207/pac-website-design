@@ -16,6 +16,13 @@ export function Footer() {
               chosen and executed by Principia undergraduates committed to elevating discourse and
               building understanding.
             </p>
+            <p className="text-white/80 leading-relaxed mb-4">
+              Want to get involved? Reach out to learn more about joining our mission{" "}
+              <a href="mailto:pac@principia.edu" className="text-[#F2D497] hover:underline font-medium">
+                pac@principia.edu
+              </a>
+              .
+            </p>
             <Button asChild size="sm" className="bg-[#F2D497] text-[#3D3D3D] hover:bg-[#F2D497]/90">
               <Link href="/register">Register Now</Link>
             </Button>

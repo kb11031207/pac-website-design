@@ -107,6 +107,13 @@ export default function AboutPage() {
               </span>
             ))}
           </div>
+          <p className="text-[#5C5C5C] text-lg mt-8">
+            Want to get involved? Reach out to learn more about joining our mission{" "}
+            <a href="mailto:pac@principia.edu" className="text-[#788668] hover:underline font-medium">
+              pac@principia.edu
+            </a>
+            .
+          </p>
         </div>
       </section>
 
