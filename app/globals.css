@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Warm Humanity Palette - Immigration PAC */
+/* Warm Humanity Palette - Immigration PAC er*/
 :root {
   --background: #f8f4ec; /* off-white cream */
   --foreground: #3d3d3d; /* warm dark gray */
