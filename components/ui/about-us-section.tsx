@@ -63,7 +63,7 @@ export default function AboutUsSection() {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Student Leadership, Professional Impact",
       description:
-        "Every aspect—from speaker selection to event logistics—is managed by Principia students. You'll experience the energy of peer-led discourse combined with the rigor of academic inquiry.",
+        "Every aspect–from speaker selection to event logistics–is managed by Principia students. You'll experience the energy of peer-led discourse combined with the rigor of academic inquiry.",
       position: "left",
     },
     {
@@ -84,7 +84,7 @@ export default function AboutUsSection() {
       icon: <BookOpen className="w-6 h-6" />,
       title: "This Year's Focus",
       description:
-        "Immigration isn't just a policy debate—it's millions of individual stories of courage, sacrifice, and hope. Through five powerful sessions, we'll explore immigration through multiple perspectives: border enforcement, family separation, identity, activism, and belonging.",
+        "Immigration isn't just a policy debate–it's millions of individual stories of courage, sacrifice, and hope. Through five powerful sessions, we'll explore immigration through multiple perspectives: border enforcement, family separation, identity, activism, and belonging.",
       position: "right",
     },
   ]
@@ -141,7 +141,7 @@ export default function AboutUsSection() {
           Since 1939, the Principia Public Affairs Conference has been a proving ground for student leadership and
           civic engagement. As the oldest continuously operating student-led conference in the United States, PAC has
           hosted Supreme Court justices, Nobel laureates, presidential advisors, and groundbreaking
-          activists—all organized entirely by undergraduate students.
+          activists–all organized entirely by undergraduate students.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -266,7 +266,7 @@ export default function AboutUsSection() {
         >
           <div className="flex-1">
             <h3 className="text-2xl font-medium mb-2">Ready to join the conversation?</h3>
-            <p className="text-white/80">Register for PAC 2025 and be part of the dialogue.</p>
+            <p className="text-white/80">Register for PAC 2026 and be part of the dialogue.</p>
           </div>
           <Link href="/register">
             <motion.span

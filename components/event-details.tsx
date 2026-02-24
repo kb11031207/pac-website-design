@@ -19,7 +19,7 @@ const whatToExpectData: TimelineEntry[] = [
     title: "Friday Afternoon & Evening",
     content: (
       <p className="text-white/95 text-sm md:text-base font-normal leading-relaxed">
-        Four distinct sessions offer different lenses on immigration—from scholarly research to legal realities to grassroots activism. Each session includes dedicated Q&A time. The conference concludes with Dr. Adeyemo&apos;s keynote, followed by a closing reception.
+        Four distinct sessions offer different lenses on immigration–from scholarly research to legal realities to grassroots activism. Each session includes dedicated Q&A time. The conference concludes with Dr. Adeyemo&apos;s keynote, followed by a closing reception.
       </p>
     ),
   },
@@ -79,7 +79,7 @@ export function EventDetails() {
                 </div>
                 <div>
                   <p className="text-sm text-[#788668] font-medium">Date</p>
-                  <p className="text-xl font-bold text-[#3D3D3D]">April 2-3, 2025</p>
+                  <p className="text-xl font-bold text-[#3D3D3D]">April 2–3, 2026</p>
                 </div>
               </CardContent>
             </Card>
@@ -91,7 +91,7 @@ export function EventDetails() {
                 </div>
                 <div>
                   <p className="text-sm text-[#788668] font-medium">Location</p>
-                  <p className="text-xl font-bold text-[#3D3D3D]">Wanamaker</p>
+                  <p className="text-xl font-bold text-[#3D3D3D]">Wanamaker Hall</p>
                   <p className="text-[#5C5C5C]">Principia College</p>
                 </div>
               </CardContent>

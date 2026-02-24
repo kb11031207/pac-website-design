@@ -41,7 +41,7 @@ export function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-[#F8F4EC]/90 max-w-lg mb-8 leading-relaxed text-pretty">
-              Five speakers. Two days. One urgent question: What does it mean to search for home in America?
+              Five speakers. Two days. One urgent question: What does it mean to search for <em>home</em> in America?
             </p>
             
 
@@ -49,7 +49,7 @@ export function Hero() {
             <div className="flex items-center gap-3 mb-10">
               <div className="w-1 h-12 bg-[#D9A87E] rounded-full" />
               <div>
-                <p className="text-white font-semibold text-base md:text-lg">April 2 &ndash; 3, 2025</p>
+                <p className="text-white font-semibold text-base md:text-lg">April 2–3, 2026</p>
                 <p className="text-[#F8F4EC]/70 text-sm md:text-base">Principia College &bull; Free Admission</p>
               </div>
             </div>

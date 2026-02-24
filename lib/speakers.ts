@@ -43,7 +43,7 @@ export const speakers: Speaker[] = [
     shortBio:
       "Laurie Vázquez Scolari is a Latina higher-education speaker, leader and equity strategist whose personal journey from the lettuce fields of California's Salinas Valley to the college vice presidency shows her commitment to first-generation students and communities of color. Her career spans roles as Dean and Associate Dean of Counseling and Student Support at City College of San Francisco and leadership positions at UC Santa Cruz, the California Community College system, and the City and School District of San Francisco, where she has led cross-sector initiatives to improve college access and success for students of color.",
     whatToExpect:
-      "Insights from a first-generation Latina leader on college access, equity, and student success for communities of color—including her work at Foothill College, City College of San Francisco, UC Santa Cruz, and her storytelling platform \"Hoop Talk with Laurie.\"",
+      "Insights from a first-generation Latina leader on college access, equity, and student success for communities of color–including her work at Foothill College, City College of San Francisco, UC Santa Cruz, and her storytelling platform \"Hoop Talk with Laurie.\"",
     status: "published",
   },
   {
@@ -55,7 +55,7 @@ export const speakers: Speaker[] = [
     shortBio:
       "Lauren Blodgett is an immigration attorney and founder of The Brave House in New York City, a nonprofit providing legal, holistic, and community support to young immigrant women and gender-expansive youth. Previously an Equal Justice Works Fellow and staff attorney at Safe Passage Project, she represented over 70 refugee children fleeing gender-based violence. A Forbes 30 Under 30 honoree, TEDx speaker, and Executive Director of The Brave House since 2018, her work addresses critical gaps in support for immigrant girls facing deportation and trauma.",
     whatToExpect:
-      "Real-world legal advocacy for immigrant youth, holistic wraparound support models, and stories from representing refugee children and leading The Brave House—integrating legal aid with mentorship and shelter services.",
+      "Real-world legal advocacy for immigrant youth, holistic wraparound support models, and stories from representing refugee children and leading The Brave House–integrating legal aid with mentorship and shelter services.",
     status: "published",
   },
   {
@@ -67,7 +67,7 @@ export const speakers: Speaker[] = [
     shortBio:
       "Scholar, storyteller, and expert on immigrant identity and belonging. Dr. Adeyemo's research examines how immigrant communities build home in new lands while maintaining connections to their heritage. Her work bridges academic research with deeply personal narrative.",
     whatToExpect:
-      "A powerful closing keynote on what \"home\" means when you carry it across borders—and how we can build a more welcoming America.",
+      "A powerful closing keynote on what \"home\" means when you carry it across borders–and how we can build a more welcoming America.",
     status: "published",
   },
 ]

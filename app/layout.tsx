@@ -20,7 +20,7 @@ const _dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Journeys of Hope | Understanding Immigration",
   description:
-    "A Public Awareness Campaign educating, raising awareness, and fostering dialogue about immigrants' right to pursue safety, freedom, and opportunity. April 3-4 at Principia College.",
+    "A Public Awareness Campaign educating, raising awareness, and fostering dialogue about immigrants' right to pursue safety, freedom, and opportunity. April 2–3, 2026 at Principia College.",
   generator: "v0.app",
   icons: {
     icon: getAssetPath("/favicon.png"),

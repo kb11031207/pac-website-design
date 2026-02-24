@@ -30,10 +30,10 @@ export function Footer() {
               <Mail className="w-4 h-4 shrink-0" />
               pac@principia.edu
             </a>
-            <p className="text-white/80 mb-2">Follow @PrincipiaPAC</p>
+            <p className="text-white/80 mb-2">Follow @prinpac</p>
             <div className="flex gap-3">
               <a
-                href="https://www.instagram.com/PrincipiaPAC"
+                href="https://www.instagram.com/prinpac"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-white transition-colors"
