@@ -2,9 +2,8 @@ export const EVENT_SCHEDULE = [
   {
     day: "Thursday, April 2",
     time: "7:30–8:30 PM",
-    speaker: "To be announced",
+    speaker: "Francisco Cantú",
     role: "Opening Speaker",
-    isTba: true,
   },
   {
     day: "Friday, April 3",

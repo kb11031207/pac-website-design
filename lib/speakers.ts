@@ -20,7 +20,7 @@ export const speakers: Speaker[] = [
       "Former U.S. Border Patrol agent turned acclaimed author. His memoir The Line Becomes a River offers a rare insider's perspective on border enforcement, blending personal experience with profound moral reckoning. Cantú's work has appeared in The New York Times, Harper's, and The Guardian.",
     whatToExpect:
       "A raw, honest examination of what it means to enforce immigration policy on the ground, and the human cost of the border.",
-    status: "draft",
+    status: "published",
   },
   {
     slug: "tanya-golash-boza",
