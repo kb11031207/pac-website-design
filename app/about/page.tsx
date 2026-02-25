@@ -94,7 +94,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#3D3D3D]">Distinguished Speakers at Principia</h2>
           </div>
           <p className="text-[#5C5C5C] text-lg mb-8 max-w-3xl">
-            Over the many years, Principia has hosted many distinguished speakers at its convocation ceremonies,
+            Over the years, Principia has hosted distinguished speakers at its convocation ceremonies,
             including:
           </p>
           <div className="flex flex-wrap gap-3">

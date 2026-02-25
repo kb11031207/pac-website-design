@@ -14,7 +14,7 @@ const navLinks = [
   { href: "#speaker", label: "Guest Speakers" },
   { href: "/register", label: "Register" },
   { href: "/board-members", label: "Our Team" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Us" },
   { href: "/faq", label: "FAQ" },
 ]
 

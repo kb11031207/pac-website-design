@@ -13,6 +13,9 @@ export function BoardMembers() {
           <p className="text-lg text-[#5C5C5C] max-w-2xl mx-auto">
             The dedicated board members bringing Journeys of Hope to life
           </p>
+          <p className="text-sm text-[#5C5C5C] max-w-2xl mx-auto mt-4 italic">
+            Board members have elected to withhold identifying information due to the current sociopolitical climate in the country.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

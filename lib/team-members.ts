@@ -14,7 +14,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Saray Hernandez Cisneros",
     slug: "saray-hernandez-cisneros",
-    title: "Executive director",
+    title: "Co-Executive Director",
     class: "Senior",
     majors: "Global Studies and Sociology & Anthropology",
     hometown: "Xicotepec de Juarez, Puebla Mexico",
@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
     majors: "Global Studies, Education",
     hometown: "Toronto, Canada",
     image: "https://prinweb.principia.edu/phone/new_faces_pictures/_Replacement_Files/20240828193359750991me.jpeg",
-    bio: "PAC is important to me because.",
+    bio: "I joined PAC because when I heard the topic I knew this was something that not only interested me but was something so necessary to talk about. Change and growth comes with action so when I got the opportunity to be a changemaker in this way I was more than eager to join this year's PAC.",
   },
   {
     name: "Francisco Alessio",
@@ -66,7 +66,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ronnie Ochieng",
     slug: "ronnie-ochieng",
-    title: "Excutive Director ",
+    title: "Co-Executive Director",
     class: "Sophomore",
     majors: "Global Studies and Business",
     hometown: "Migori, Kenya",
@@ -76,7 +76,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Christian Ramazani",
     slug: "christian-ramazani",
-    title: "Co-director Publication",
+    title: "Co-Director of Publications",
     class: "Sophomore",
     majors: "Computer Science and Economics",
     hometown: "Cape Town, South Africa",
@@ -96,7 +96,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ernesto Botero",
     slug: "ernesto-botero",
-    title: "Off-Campus Delegate",
+    title: "Off-Campus Delegates",
     class: "Senior",
     majors: "Sociology & Anthropology",
     hometown: "Cartagena, Colombia",
